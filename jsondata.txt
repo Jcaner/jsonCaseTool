@@ -14,7 +14,7 @@
     ],
     "sites": [
         {
-            "name": "菜鸟教程",
+            "name": {"k":"V"},
             "url": "www.runoob.com"
         },
         {

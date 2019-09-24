@@ -2,12 +2,13 @@ import os
 import sys
 import json
 import requests
-import tomorrow
+from tomorrow3 import threads
 import yaml
 import time
 
 #TODO:1.增加不需要容错的关键参数过滤功能
 #TODO:2.增加发送JSON的功能
+#TODO:3.'111'是json问题,isJson()
 
 jsonstr = '''
 {"code":0,"message":"success","resultData":{"footerImageArray":[{"$$hashKey":"00G","footerImageURL":"http://cdn.oudianyun.com/gxej-bco/dev/osc/1536997739916_73.84672722703918.png","footerImageName":"微信公众号"},{"$$hashKey":"00L","footerImageURL":"http://cdn.oudianyun.com/gxej-bco/dev/osc/1536997797803_89.28036273241464.png","footerImageName":"下载客户端"},{"$$hashKey":"00W","footerImageURL":"http://cdn.oudianyun.com/gxej-bco/stg/osc/1546929242381_57.92603252833359.png","footerImageName":"页尾图片名称圈圈圈"},{"$$hashKey":"00J","footerImageURL":"http://cdn.oudianyun.com/gxej-bco/stg/osc/1548656588972_91.1532866641156.png","footerImageName":"尾页测试"}],"footerPhoneName":"热线电话","footerPhoneArray":["400 628 6121","400 628 6122"],"footerWorktimeName":"周一至周五","footerWorktime":"9：00 ~ 18：00","companyId":171}}
@@ -39,7 +40,7 @@ class Base(object):
         #返回yaml中element数量
         return len(self.readYaml()['elements'])
 
-    # TODO:'111'是json问题
+
     def isJson(self,data):
         #判断内容是否是json
         if isinstance(data,str):
@@ -82,7 +83,7 @@ class Base(object):
 '''
   
 
-class RunJsonTool(Base):
+class RunJsonTool():
     def __init__(self):
         self.path = None
         self.fileName = None
@@ -100,7 +101,7 @@ class RunJsonTool(Base):
 class ReaderJson():
     __value = list()
     __key = list()
-
+    __path = list()
     def toJson(self, jsonstr):
         if isinstance(jsonstr, str):
             jsondata = json.loads(jsonstr)
@@ -111,6 +112,7 @@ class ReaderJson():
         :param jsondata:
         :return:
         '''
+
         if isinstance(jsondata, list):
             for j in jsondata:
                 if isinstance(j, list):
@@ -138,19 +140,113 @@ class ReaderJson():
             # print(jsondata)
             self.__value.append(jsondata)
 
+    def readJsonPath(self,jsondata,jsonpath =[]):
+        '''
+        :param jsondata:
+        :return:
+            [
+                guid,name,is_active,company,address,registered,latitude,longitude,tags,
+                sites,[sites,0,name],[sites,0,url],[sites,1,name],[sites,1,url],[sites,2,name],[sites,2,url]
+            ]
+        '''
+
+        #['guid', 'name', 'is_active', 'company', 'address', 'registered', 'latitude', 'longitude', 'tags', 'sites', 0, 'name', 'k', 0, 'url', 1, 'name', 1, 'url', 2, 'name', 2, 'url']
+
+        if isinstance(jsondata, list):
+
+            for j,n in zip(jsondata,range(len(jsondata))):
+
+                if isinstance(j, list):
+                    self.__path.append(n)
+                    for i in j:
+                        self.readJsonPath(i)
+                elif isinstance(j, dict):
+                    for k, v in j.items():
+
+                        self.__path.append(n)
+                        self.__path.append(k)
+                        #print(k,'---k')
+                        #print(self.__path)
+                        self.readJsonPath(v)
+
+        elif isinstance(jsondata, dict):
+            for m, n in jsondata.items():
+                print(m,'---m')
+                #path = path.append(m)
+                #path = jsonpath.append(m)
+                #print(self.__path)
+                self.__path.append(m)
+                self.readJsonPath(n)
+
+    def jsonpath(self):
+        return self.__path
+
+
+
+class WriterJson():
+    '''
+    将json写入到文件中
+    '''
+    init_flag = False
+    instance = None
+    def __init__(self,newjson):
+        if self.init_flag is False:
+            self.n = 0
+            self.init_flag = True
+
+        self.newjson =newjson
+
+    def __new__(cls, *args, **kwargs):
+        if cls.instance is None:
+            cls.instance  = super().__new__(cls)
+        return cls.instance
+
+    def newFilenamePath(self):
+        self.n = self.n +1
+        return 'jsoncase/jsoncase'+str((self.n))+'.txt'
+
+    def __call__(self, *args, **kwargs):
+        with open(self.newFilenamePath()) as f:
+            f.write(self.newjson)
+
+
+class CreateJson():
+    def __init__(self):
+        pass
+
+
+    @threads(10)
+    def createJsonData(self,jsondata,jsonpath = None):
+       pass
+
+
+
+
 
 if __name__ == '__main__':
-    #a = ReaderJson()
-    #a.readJsonKey(a.toJson(jsonstr))
+
+
+    a = ReaderJson()
+    b = Base()
+    a.readJsonPath(a.toJson(b.jsonDatafile()))
+    print(a.jsonpath())
+
+
+
+'''
+if __name__ == '__main__':
+    a = ReaderJson()
+    b = Base()
+    a.readJsonKey(a.toJson(b.jsonDatafile()))
     #a.readJsonValue(a.toJson(jsonstr))
     #jsons = a.toJson(jsonstr)
     #print(jsons['resultData']['footerImageArray'][1]['footerImageName'])
-    b  = Base()
+    #b  = Base()
     #b.jsonfile= 'aaa.txt'
 
-    print(b.isJson('111'))
+    #print(b.isJson('111'))
 
-'''
+
 if __name__ == "__main__":
     path = sys.argv[1]
     filename = sys.argv[2]
