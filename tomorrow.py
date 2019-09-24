@@ -17,7 +17,7 @@ class Tomorrow():
         return self._future.result(self._timeout)
         
 
-def async(n, base_type, timeout=None):
+def asyncK(n, base_type, timeout=None):
     def decorator(f):
         if isinstance(n, int):
             pool = base_type(n)
@@ -39,4 +39,4 @@ def async(n, base_type, timeout=None):
 
 
 def threads(n, timeout=None):
-    return async(n, ThreadPoolExecutor, timeout)
+    return asyncK(n, ThreadPoolExecutor, timeout)
