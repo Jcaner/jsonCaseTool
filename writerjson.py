@@ -29,3 +29,7 @@ class WriterJson():
     def __call__(self, *args, **kwargs):
         with open(self.newFilenamePath(),'w+',encoding = 'utf-8') as f:
             f.write(self.newjson)
+
+
+if __name__ == '__main__':
+    WriterJson('11111')()
