@@ -30,7 +30,7 @@ class Base():
 
     def readYaml(self):
          with open('caseelement.yaml','r',encoding='utf-8') as yamlcaseelement:
-            return yaml.load(yamlcaseelement.read())
+            return yaml.load(yamlcaseelement.read(),Loader=yaml.FullLoader)
     def readYamlcaseElement(self):
         '''
         #读取yaml文件
