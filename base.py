@@ -5,6 +5,10 @@ import requests
 from tomorrow3 import threads
 import yaml
 import time
+import copy
+from functools import reduce
+from operator import getitem
+
 
 #TODO:1.增加不需要容错的关键参数过滤功能
 #TODO:2.增加发送JSON的功能
@@ -101,7 +105,6 @@ class RunJsonTool():
 class ReaderJson():
     __value = list()
     __key = list()
-    __path = list()
     def toJson(self, jsonstr):
         if isinstance(jsonstr, str):
             jsondata = json.loads(jsonstr)
@@ -129,58 +132,42 @@ class ReaderJson():
                 self.readJsonKey(n)
 
 
-    def readJsonValue(self, jsondata):
-        if isinstance(jsondata, list):
-            for i in jsondata:
-                self.readJsonValue(i)
-        elif isinstance(jsondata, dict):
-            for _, v in jsondata.items():
-                self.readJsonValue(v)
-        else:
-            # print(jsondata)
-            self.__value.append(jsondata)
+    def readJsonValue(self, jsondata,jsonpaths = []):
+        if jsonpaths is None:
+            jsonpaths = self.readJsonPath(jsondata)
+            print(jsonpaths)
+        __values = []
+        for keylist in jsonpaths:
+            value = reduce(lambda a, b: getitem(a, b), keylist, jsondata)
+            __values.append(value)
 
-    def readJsonPath(self,jsondata,jsonpath =[]):
-        '''
-        :param jsondata:
-        :return:
-            [
-                guid,name,is_active,company,address,registered,latitude,longitude,tags,
-                sites,[sites,0,name],[sites,0,url],[sites,1,name],[sites,1,url],[sites,2,name],[sites,2,url]
+        return __values
+    '''
+    readJsonPath
+            结果：
+           [
+                ['guid'], ['name'], ['is_active'], ['company'], ['address'], ['registered'], ['latitude'], ['longitude'], 
+                ['tags'], ['tags', 0], ['tags', 1], ['tags', 2], 
+                ['sites'], 
+                ['sites', 0], 
+                ['sites', 0, 'name'], ['sites', 0, 'name', 'k'], ['sites', 0, 'url'],
+                ['sites', 1], ['sites', 1, 'name'], ['sites', 1, 'url'], 
+                ['sites', 2], ['sites', 2, 'name'], ['sites', 2, 'url']
             ]
-        '''
+    '''
 
-        #['guid', 'name', 'is_active', 'company', 'address', 'registered', 'latitude', 'longitude', 'tags', 'sites', 0, 'name', 'k', 0, 'url', 1, 'name', 1, 'url', 2, 'name', 2, 'url']
+    def readJsonPath(self,jsondata):
+        paths = []
+        if isinstance(jsondata, dict):
+            for k, v in jsondata.items():
+                paths.append([k])
+                paths += [[k] + x for x in self.readJsonPath(v)]
 
-        if isinstance(jsondata, list):
-
-            for j,n in zip(jsondata,range(len(jsondata))):
-
-                if isinstance(j, list):
-                    self.__path.append(n)
-                    for i in j:
-                        self.readJsonPath(i)
-                elif isinstance(j, dict):
-                    for k, v in j.items():
-
-                        self.__path.append(n)
-                        self.__path.append(k)
-                        #print(k,'---k')
-                        #print(self.__path)
-                        self.readJsonPath(v)
-
-        elif isinstance(jsondata, dict):
-            for m, n in jsondata.items():
-                print(m,'---m')
-                #path = path.append(m)
-                #path = jsonpath.append(m)
-                #print(self.__path)
-                self.__path.append(m)
-                self.readJsonPath(n)
-
-    def jsonpath(self):
-        return self.__path
-
+        elif isinstance(jsondata, list):# and not isinstance(jsondata, str)
+            for i, v in enumerate(jsondata):
+                paths.append([i])
+                paths += [[i] + x for x in self.readJsonPath(v)]
+        return paths
 
 
 class WriterJson():
@@ -214,10 +201,13 @@ class CreateJson():
     def __init__(self):
         pass
 
+    def createJsonData(self,jsondata,jsonkeyslist = []):
 
-    @threads(10)
-    def createJsonData(self,jsondata,jsonpath = None):
-       pass
+        copyjson = copy.copy(jsondata)
+        if jsonkeyslist is not None:
+            for keys in jsonkeyslist:
+                pass
+
 
 
 
@@ -228,10 +218,12 @@ if __name__ == '__main__':
 
     a = ReaderJson()
     b = Base()
-    a.readJsonPath(a.toJson(b.jsonDatafile()))
-    print(a.jsonpath())
+    #t = a.readJsonPath()
 
+    t =a.readJsonPath(a.toJson(b.jsonDatafile()))
 
+    l = a.readJsonValue(a.toJson(b.jsonDatafile()),t)
+    print(l)
 
 '''
 if __name__ == '__main__':
