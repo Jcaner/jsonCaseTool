@@ -1,13 +1,7 @@
-import os
-import sys
 import json
-import requests
-from tomorrow3 import threads
 import yaml
-import time
-import copy
-from functools import reduce
-from operator import getitem
+
+
 
 
 #TODO:1.增加不需要容错的关键参数过滤功能
@@ -26,7 +20,7 @@ cmd >> python 文件路径 需要保存的路径
 
 '''
 
-class Base(object):
+class Base():
 
     '''
     读取yaml文件
@@ -38,15 +32,25 @@ class Base(object):
          with open('caseelement.yaml','r',encoding='utf-8') as yamlcaseelement:
             return yaml.load(yamlcaseelement.read())
     def readYamlcaseElement(self):
-        #读取yaml文件返回list
+        '''
+        #读取yaml文件
+        :return: list
+        '''
         return self.readYaml()['elements']
     def getCaseElementNum(self):
-        #返回yaml中element数量
+        '''
+
+        :return: 返回yaml中element数量
+        '''
         return len(self.readYaml()['elements'])
 
 
     def isJson(self,data):
-        #判断内容是否是json
+        '''
+        判断内容是否是json
+        :param data:
+        :return: T/F
+        '''
         if isinstance(data,str):
             try:
                 json.loads(data,encoding='utf-8')
@@ -57,11 +61,28 @@ class Base(object):
         else:
             return False
 
+    def toJson(self, jsonstr):
+        '''
+        如果是str，则转换成json
+        :param jsonstr:
+        :return: json
+        '''
+
+        if isinstance(jsonstr, str):
+            jsondata = json.loads(jsonstr)
+        return jsondata
+
+
     def jsonDatafile(self):
-        #获取jsondata.txt 的内容
+        '''
+        从文件获取jsondata.txt 的内容
+        :return:
+        '''
         with open(self.__filename,'r',encoding='utf-8') as data:
             self.__jsondata = data.read()
         return self.__jsondata
+
+
 
     @property
     def jsonfilename(self):
@@ -85,166 +106,21 @@ class Base(object):
             print(e)
 
 '''
-  
-
-class RunJsonTool():
-    def __init__(self):
-        self.path = None
-        self.fileName = None
-
-    def __call__(self,path,fileName):
-        self.fileName  = fileName
-        self.path = path
-        self.run()
-    
-    def run(self):
-        #获取json文件
-        pass
-
-
-class ReaderJson():
-    __value = list()
-    __key = list()
-    def toJson(self, jsonstr):
-        if isinstance(jsonstr, str):
-            jsondata = json.loads(jsonstr)
-        return jsondata
-
-    def readJsonKey(self, jsondata):
-        '''
-        :param jsondata:
-        :return:
-        '''
-
-        if isinstance(jsondata, list):
-            for j in jsondata:
-                if isinstance(j, list):
-                    print(j,'---j')
-                    for i in j:
-                        self.readJsonKey(i)
-                elif isinstance(j, dict):
-                    for k, v in j.items():
-                        print(k,'---k')
-                        self.readJsonKey(v)
-        elif isinstance(jsondata, dict):
-            for m, n in jsondata.items():
-                print(m,'---m')
-                self.readJsonKey(n)
-
-
-    def readJsonValue(self, jsondata,jsonpaths = []):
-        if jsonpaths is None:
-            jsonpaths = self.readJsonPath(jsondata)
-            print(jsonpaths)
-        __values = []
-        for keylist in jsonpaths:
-            value = reduce(lambda a, b: getitem(a, b), keylist, jsondata)
-            __values.append(value)
-
-        return __values
-    '''
-    readJsonPath
-            结果：
-           [
-                ['guid'], ['name'], ['is_active'], ['company'], ['address'], ['registered'], ['latitude'], ['longitude'], 
-                ['tags'], ['tags', 0], ['tags', 1], ['tags', 2], 
-                ['sites'], 
-                ['sites', 0], 
-                ['sites', 0, 'name'], ['sites', 0, 'name', 'k'], ['sites', 0, 'url'],
-                ['sites', 1], ['sites', 1, 'name'], ['sites', 1, 'url'], 
-                ['sites', 2], ['sites', 2, 'name'], ['sites', 2, 'url']
-            ]
-    '''
-
-    def readJsonPath(self,jsondata):
-        paths = []
-        if isinstance(jsondata, dict):
-            for k, v in jsondata.items():
-                paths.append([k])
-                paths += [[k] + x for x in self.readJsonPath(v)]
-
-        elif isinstance(jsondata, list):# and not isinstance(jsondata, str)
-            for i, v in enumerate(jsondata):
-                paths.append([i])
-                paths += [[i] + x for x in self.readJsonPath(v)]
-        return paths
-
-
-class WriterJson():
-    '''
-    将json写入到文件中
-    '''
-    init_flag = False
-    instance = None
-    def __init__(self,newjson):
-        if self.init_flag is False:
-            self.n = 0
-            self.init_flag = True
-
-        self.newjson =newjson
-
-    def __new__(cls, *args, **kwargs):
-        if cls.instance is None:
-            cls.instance  = super().__new__(cls)
-        return cls.instance
-
-    def newFilenamePath(self):
-        self.n = self.n +1
-        return 'jsoncase/jsoncase'+str((self.n))+'.txt'
-
-    def __call__(self, *args, **kwargs):
-        with open(self.newFilenamePath()) as f:
-            f.write(self.newjson)
-
-
-class CreateJson():
-    def __init__(self):
-        pass
-
-    def createJsonData(self,jsondata,jsonkeyslist = []):
-
-        copyjson = copy.copy(jsondata)
-        if jsonkeyslist is not None:
-            for keys in jsonkeyslist:
-                pass
 
 
 
 
 
 
-if __name__ == '__main__':
 
 
-    a = ReaderJson()
-    b = Base()
-    #t = a.readJsonPath()
-
-    t =a.readJsonPath(a.toJson(b.jsonDatafile()))
-
-    l = a.readJsonValue(a.toJson(b.jsonDatafile()),t)
-    print(l)
-
-'''
-if __name__ == '__main__':
-    a = ReaderJson()
-    b = Base()
-    a.readJsonKey(a.toJson(b.jsonDatafile()))
-    #a.readJsonValue(a.toJson(jsonstr))
-    #jsons = a.toJson(jsonstr)
-    #print(jsons['resultData']['footerImageArray'][1]['footerImageName'])
-    #b  = Base()
-    #b.jsonfile= 'aaa.txt'
-
-    #print(b.isJson('111'))
 
 
-if __name__ == "__main__":
-    path = sys.argv[1]
-    filename = sys.argv[2]
-    print('---------json容错case正在生成----------')
-    RunJsonTool(path,filename)
-    print('---------生成case成功------------------')
-'''
+
+
+
+
+
+
 
 
