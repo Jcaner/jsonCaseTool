@@ -1,1 +1,1 @@
-{'code': 'False', 'message': 'True', 'errMsg': 'None', 'data': '18333615432', 'stackTrace': '1234567SDFGHJ#$%^YUI', 'gitVersion': '826153155@qq.com', 'total': 'null', 'trace': '中文'}
+{'code': '6@#$%^&*(efkfjfghk6541', 'message': '&@#￥%……&*（）', 'errMsg': '\\\\/\\/\\/\\/\\//', 'data': '/t/n/f/r', 'stackTrace': 'okey', 'gitVersion': [], 'total': {}, 'trace': ''}

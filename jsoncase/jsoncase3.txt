@@ -1,1 +1,1 @@
-{'code': '123456', 'message': 'http://www.baidu.com', 'errMsg': 'False', 'data': 'True', 'stackTrace': 'None', 'gitVersion': '18333615432', 'total': '1234567SDFGHJ#$%^YUI', 'trace': '826153155@qq.com'}
+{'code': False, 'message': True, 'errMsg': 'None', 'data': 18333615432, 'stackTrace': '1234567SDFGHJ#$%^YUI', 'gitVersion': '826153155@qq.com', 'total': '^1[0-9]{10}', 'trace': [1, 2, 3, 4]}

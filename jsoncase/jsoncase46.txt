@@ -1,0 +1,1 @@
+{'code': '0', 'message': None, 'errMsg': None, 'data': {'listObj': '中文', 'total': '~!@#$%^&*(SRDTFYUHIJKUYGTFRTDDXFGB哈哈@#￥%……&*（VUGVBJNM'}, 'stackTrace': None, 'gitVersion': {'git.branch': 123456, 'git.commit.id': 'http://www.baidu.com'}, 'total': 0, 'trace': '71!$76#@6%&10!$,c2a806a,65828882881437492762207'}

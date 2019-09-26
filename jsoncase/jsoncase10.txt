@@ -1,1 +1,1 @@
-{'code': '826153155@qq.com', 'message': 'null', 'errMsg': '中文', 'data': '~!@#$%^&*(SRDTFYUHIJKUYGTFRTDDXFGB哈哈@#￥%……&*（VUGVBJNM', 'stackTrace': '123456', 'gitVersion': 'http://www.baidu.com', 'total': 'False', 'trace': 'True'}
+{'code': [], 'message': {}, 'errMsg': '', 'data': None, 'stackTrace': '中文', 'gitVersion': '~!@#$%^&*(SRDTFYUHIJKUYGTFRTDDXFGB哈哈@#￥%……&*（VUGVBJNM', 'total': 123456, 'trace': 'http://www.baidu.com'}

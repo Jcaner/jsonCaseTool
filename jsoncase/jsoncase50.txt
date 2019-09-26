@@ -1,0 +1,1 @@
+{'code': '0', 'message': None, 'errMsg': None, 'data': {'listObj': None, 'total': '中文'}, 'stackTrace': None, 'gitVersion': {'git.branch': '~!@#$%^&*(SRDTFYUHIJKUYGTFRTDDXFGB哈哈@#￥%……&*（VUGVBJNM', 'git.commit.id': 123456}, 'total': 0, 'trace': '71!$76#@6%&10!$,c2a806a,65828882881437492762207'}

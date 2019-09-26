@@ -2,23 +2,9 @@ import json
 import yaml
 
 
-
-
 #TODO:1.增加不需要容错的关键参数过滤功能
 #TODO:2.增加发送JSON的功能
 #TODO:3.'111'是json问题,isJson()
-
-jsonstr = '''
-{"code":0,"message":"success","resultData":{"footerImageArray":[{"$$hashKey":"00G","footerImageURL":"http://cdn.oudianyun.com/gxej-bco/dev/osc/1536997739916_73.84672722703918.png","footerImageName":"微信公众号"},{"$$hashKey":"00L","footerImageURL":"http://cdn.oudianyun.com/gxej-bco/dev/osc/1536997797803_89.28036273241464.png","footerImageName":"下载客户端"},{"$$hashKey":"00W","footerImageURL":"http://cdn.oudianyun.com/gxej-bco/stg/osc/1546929242381_57.92603252833359.png","footerImageName":"页尾图片名称圈圈圈"},{"$$hashKey":"00J","footerImageURL":"http://cdn.oudianyun.com/gxej-bco/stg/osc/1548656588972_91.1532866641156.png","footerImageName":"尾页测试"}],"footerPhoneName":"热线电话","footerPhoneArray":["400 628 6121","400 628 6122"],"footerWorktimeName":"周一至周五","footerWorktime":"9：00 ~ 18：00","companyId":171}}
-'''
-
-'''
-通过文件的JSON串获取到json容错的用例
-
-cmd >> python 文件路径 需要保存的路径
-
-
-'''
 
 class Base():
 

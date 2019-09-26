@@ -1,1 +1,1 @@
-{'code': '0', 'message': None, 'errMsg': None, 'data': {'listObj': '826153155@qq.com', 'total': 'null'}, 'stackTrace': None, 'gitVersion': {'git.branch': '中文', 'git.commit.id': '~!@#$%^&*(SRDTFYUHIJKUYGTFRTDDXFGB哈哈@#￥%……&*（VUGVBJNM'}, 'total': 0, 'trace': '71!$76#@6%&10!$,c2a806a,65828882881437492762207'}
+{'code': True, 'message': 'None', 'errMsg': 18333615432, 'data': '1234567SDFGHJ#$%^YUI', 'stackTrace': '826153155@qq.com', 'gitVersion': '^1[0-9]{10}', 'total': [1, 2, 3, 4], 'trace': {'user': 'haha'}}
