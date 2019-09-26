@@ -14,3 +14,6 @@
          单个可以使用jmeter进行测试，当然多个文件jmeter接口测试也可以;<br>
 2.容错case的完善.<br>
 3.过滤必填项，类似code:0或success:0 这种在某些场景下不可改变值的.<br>
+## 联系方式
+加微信聊天哈，请注明在哪里看到的，谢谢<br>
+![image](https://img1.ccgn.cc/dev/back-product-web/1569486849791_61.43532327747367_5bafb8c0-f539-4985-8835-94ad071a5e89.jpg)
