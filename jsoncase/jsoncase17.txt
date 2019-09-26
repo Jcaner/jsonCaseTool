@@ -1,0 +1,1 @@
+{'code': '0', 'message': None, 'errMsg': None, 'data': {'listObj': 'True', 'total': 'None'}, 'stackTrace': None, 'gitVersion': {'git.branch': '18333615432', 'git.commit.id': '1234567SDFGHJ#$%^YUI'}, 'total': 0, 'trace': '71!$76#@6%&10!$,c2a806a,65828882881437492762207'}
