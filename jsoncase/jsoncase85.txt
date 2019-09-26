@@ -1,1 +1,1 @@
-{'code': '0', 'message': None, 'errMsg': None, 'data': {'listObj': [True, 'None', 18333615432, '1234567SDFGHJ#$%^YUI', '826153155@qq.com', '^1[0-9]{10}', [1, 2, 3, 4], {'user': 'haha'}, 'End', 0], 'total': 6793}, 'stackTrace': None, 'gitVersion': {'git.branch': 'origin/trunk', 'git.commit.id': 'c2a806af4eedb84ccdba6f213408b1ed2e37ce7f'}, 'total': 0, 'trace': '71!$76#@6%&10!$,c2a806a,65828882881437492762207'}
+{'status': '0000', 'message': 'success', 'data': {'title': {'id': '001', 'name': '白菜'}, 'content': []}}

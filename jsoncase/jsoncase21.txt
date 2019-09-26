@@ -1,1 +1,1 @@
-{'code': True, 'message': 'None', 'errMsg': 18333615432, 'data': '1234567SDFGHJ#$%^YUI', 'stackTrace': '826153155@qq.com', 'gitVersion': '^1[0-9]{10}', 'total': [1, 2, 3, 4], 'trace': {'user': 'haha'}}
+{'status': '0000', 'message': 'success', 'data': {'title': {'id': '001', 'name': '白菜'}, 'content': [15695053810, {'id': '002', 'value': '你好 萝卜'}]}}

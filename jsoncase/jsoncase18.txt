@@ -1,1 +1,1 @@
-{'code': {'user': 'haha'}, 'message': 'End', 'errMsg': 0, 'data': -1, 'stackTrace': 1, 'gitVersion': 0.5, 'total': 65535, 'trace': 15695053810}
+{'status': '0000', 'message': 'success', 'data': {'title': {'id': 1, 'name': '白菜'}, 'content': [{'id': '001', 'value': '你好 白菜'}, {'id': '002', 'value': '你好 萝卜'}]}}

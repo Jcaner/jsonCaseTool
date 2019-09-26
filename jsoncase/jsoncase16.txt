@@ -1,1 +1,1 @@
-{'code': [], 'message': {}, 'errMsg': '', 'data': None, 'stackTrace': '中文', 'gitVersion': '~!@#$%^&*(SRDTFYUHIJKUYGTFRTDDXFGB哈哈@#￥%……&*（VUGVBJNM', 'total': 123456, 'trace': 'http://www.baidu.com'}
+{'status': '0000', 'message': 'success', 'data': 0}

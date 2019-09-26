@@ -1,1 +1,1 @@
-{'code': [], 'message': {}, 'errMsg': '', 'data': None, 'stackTrace': '中文', 'gitVersion': '~!@#$%^&*(SRDTFYUHIJKUYGTFRTDDXFGB哈哈@#￥%……&*（VUGVBJNM', 'total': 123456, 'trace': 'http://www.baidu.com'}
+{'status': '0000', 'message': 'success', 'data': {'title': {'id': '001', 'name': '白菜'}, 'content': [{'id': '001', 'value': '1234567SDFGHJ#$%^YUI'}, {'id': '002', 'value': '你好 萝卜'}]}}

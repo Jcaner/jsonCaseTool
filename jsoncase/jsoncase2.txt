@@ -1,1 +1,1 @@
-{'code': '&@#￥%……&*（）', 'message': '\\\\/\\/\\/\\/\\//', 'errMsg': '/t/n/f/r', 'data': 'okey', 'stackTrace': [], 'gitVersion': {}, 'total': '', 'trace': None}
+{'status': '0000', 'message': '中文', 'data': {'title': {'id': '001', 'name': '白菜'}, 'content': [{'id': '001', 'value': '你好 白菜'}, {'id': '002', 'value': '你好 萝卜'}]}}

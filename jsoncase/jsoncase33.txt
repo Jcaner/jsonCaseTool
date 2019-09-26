@@ -1,1 +1,1 @@
-{'code': '0', 'message': None, 'errMsg': None, 'data': {'listObj': -1, 'total': 1}, 'stackTrace': None, 'gitVersion': {'git.branch': 0.5, 'git.commit.id': 65535}, 'total': 0, 'trace': '71!$76#@6%&10!$,c2a806a,65828882881437492762207'}
+{'status': '0000', 'message': 'success', 'data': {'title': {'id': '001', 'name': '白菜'}, 'content': 123456}}

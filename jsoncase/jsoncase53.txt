@@ -1,1 +1,1 @@
-{'code': '0', 'message': None, 'errMsg': None, 'data': {'listObj': [1, 2, 3, 4], 'total': {'user': 'haha'}}, 'stackTrace': None, 'gitVersion': {'git.branch': 'End', 'git.commit.id': 0}, 'total': 0, 'trace': '71!$76#@6%&10!$,c2a806a,65828882881437492762207'}
+{'status': '\\\\/\\/\\/\\/\\//', 'message': 'success', 'data': {'title': {'id': '001', 'name': '白菜'}, 'content': [{'id': '001', 'value': '你好 白菜'}, {'id': '002', 'value': '你好 萝卜'}]}}
