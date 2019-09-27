@@ -1,1 +1,1 @@
-{'status': '~!@#$%^&*(SRDTFYUHIJKUYGTFRTDDXFGB哈哈@#￥%……&*（VUGVBJNM', 'message': 123456, 'data': 'http://www.baidu.com'}
+{'status': '0000', 'message': 'success', 'data': {'title': {'id': '001', 'name': '白菜'}, 'content': [{'id': '001', 'value': '你好 白菜'}, {'id': '002', 'value': True}]}}

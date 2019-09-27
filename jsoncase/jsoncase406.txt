@@ -1,1 +1,1 @@
-{'status': None, 'message': '中文', 'data': '~!@#$%^&*(SRDTFYUHIJKUYGTFRTDDXFGB哈哈@#￥%……&*（VUGVBJNM'}
+{'status': [1, 2, 3, 4], 'message': {'user': 'haha'}, 'data': 'End'}

@@ -1,1 +1,1 @@
-{'status': '0000', 'message': 'success', 'data': {'title': {'id': '001', 'name': '白菜'}, 'content': [{'id': True, 'value': 'None'}, {'id': 18333615432, 'value': '1234567SDFGHJ#$%^YUI'}]}}
+{'status': '0000', 'message': 'success', 'data': {'title': {'id': '001', 'name': '白菜'}, 'content': [{'id': 1, 'value': 0.5}, {'id': 65535, 'value': 15695053810}]}}

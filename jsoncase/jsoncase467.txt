@@ -1,1 +1,1 @@
-{'status': '0000', 'message': 'success', 'data': {'title': {'id': '001', 'name': '白菜'}, 'content': [{'id': 123456, 'value': 'http://www.baidu.com'}, {'id': False, 'value': True}]}}
+{'status': '0000', 'message': 'success', 'data': {'title': {'id': '001', 'name': '白菜'}, 'content': [{'id': {}, 'value': ''}, {'id': None, 'value': '中文'}]}}

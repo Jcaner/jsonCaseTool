@@ -1,1 +1,1 @@
-{'status': '0000', 'message': 'success', 'data': {'title': '中文', 'content': '~!@#$%^&*(SRDTFYUHIJKUYGTFRTDDXFGB哈哈@#￥%……&*（VUGVBJNM'}}
+{'status': '0000', 'message': 'success', 'data': {'title': True, 'content': 'None'}}

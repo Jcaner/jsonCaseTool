@@ -1,8 +1,16 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Time    : 2019/9/27 10:13
+# @Author  : dongpf
+# @Site    :
+# @File    : readerjson.py
+# @Software: PyCharm
+
 from functools import reduce
 from operator import getitem
 
-class ReaderJson():
 
+class ReaderJson(object):
     __value = list()
     __key = list()
 
@@ -16,18 +24,17 @@ class ReaderJson():
         if isinstance(jsondata, list):
             for j in jsondata:
                 if isinstance(j, list):
-                    print(j,'---j')
+                    print(j, '---j')
                     for i in j:
                         self.getJsonKey(i)
                 elif isinstance(j, dict):
                     for k, v in j.items():
-                        print(k,'---k')
+                        print(k, '---k')
                         self.getJsonKey(v)
         elif isinstance(jsondata, dict):
             for m, n in jsondata.items():
-                print(m,'---m')
+                print(m, '---m')
                 self.getJsonKey(n)
-
 
     def getJsonValue(self, jsondata, jsonpaths = []):
         '''
@@ -45,7 +52,6 @@ class ReaderJson():
             __values.append(value)
 
         return __values
-
 
     def getJsonPath(self, jsondata):
         '''
@@ -71,10 +77,8 @@ class ReaderJson():
                 paths.append([k])
                 paths += [[k] + x for x in self.getJsonPath(v)]
 
-        elif isinstance(jsondata, list):# and not isinstance(jsondata, str)
+        elif isinstance(jsondata, list):  # and not isinstance(jsondata, str)
             for i, v in enumerate(jsondata):
                 paths.append([i])
                 paths += [[i] + x for x in self.getJsonPath(v)]
         return paths
-
-

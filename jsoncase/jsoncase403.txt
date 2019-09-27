@@ -1,1 +1,1 @@
-{'status': [], 'message': {}, 'data': ''}
+{'status': 'End', 'message': 0, 'data': -1}

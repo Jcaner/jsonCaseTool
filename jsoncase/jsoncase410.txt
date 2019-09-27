@@ -1,1 +1,1 @@
-{'status': '0000', 'message': 'success', 'data': {'title': 'http://www.baidu.com', 'content': False}}
+{'status': '0000', 'message': 'success', 'data': {'title': {'user': 'haha'}, 'content': 'End'}}

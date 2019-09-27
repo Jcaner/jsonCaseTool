@@ -1,28 +1,34 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Time    : 2019/9/27 10:13
+# @Author  : dongpf
+# @Site    :
+# @File    : base.py
+# @Software: PyCharm
+
 import json
 import yaml
 
 
-#TODO:1.增加不需要容错的关键参数过滤功能
-#TODO:2.增加发送JSON的功能
-#TODO:3.'111'是json问题,isJson()
+# TODO:1.增加不需要容错的关键参数过滤功能
+# TODO:2.增加发送JSON的功能
+# TODO:3.'111'是json问题,isJson()
 
 class Base():
-
-    '''
-    读取yaml文件
-    '''
     def __init__(self):
         self.__filename = 'jsondata.txt'
 
     def readYaml(self):
-         with open('caseelement.yaml','r',encoding='utf-8') as yamlcaseelement:
-            return yaml.load(yamlcaseelement.read(),Loader=yaml.FullLoader)
+        with open('caseelement.yaml', 'r', encoding = 'utf-8') as yamlcaseelement:
+            return yaml.load(yamlcaseelement.read(), Loader = yaml.FullLoader)
+
     def readYamlcaseElement(self):
         '''
         #读取yaml文件
         :return: list
         '''
         return self.readYaml()['elements']
+
     def getCaseElementNum(self):
         '''
 
@@ -30,16 +36,15 @@ class Base():
         '''
         return len(self.readYaml()['elements'])
 
-
-    def isJson(self,data):
+    def isJson(self, data):
         '''
         判断内容是否是json
         :param data:
         :return: T/F
         '''
-        if isinstance(data,str):
+        if isinstance(data, str):
             try:
-                json.loads(data,encoding='utf-8')
+                json.loads(data, encoding = 'utf-8')
             except ValueError as e:
                 print(e)
                 return False
@@ -58,25 +63,23 @@ class Base():
             jsondata = json.loads(jsonstr)
         return jsondata
 
-
     def jsonDatafile(self):
         '''
         从文件获取jsondata.txt 的内容
         :return:
         '''
-        with open(self.__filename,'r',encoding='utf-8') as data:
+        with open(self.__filename, 'r', encoding = 'utf-8') as data:
             self.__jsondata = data.read()
         return self.__jsondata
-
-
 
     @property
     def jsonfilename(self):
         return self.__filename
 
     @jsonfilename.setter
-    def jsonfilename(self,value):
+    def jsonfilename(self, value):
         self.__filename = value
+
 
 '''
     @staticmethod
@@ -92,21 +95,3 @@ class Base():
             print(e)
 
 '''
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
