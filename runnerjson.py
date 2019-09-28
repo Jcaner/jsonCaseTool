@@ -16,7 +16,7 @@ from createjson import CreateJson
 from readerjson import ReaderJson
 
 create = CreateJson()
-
+bs = Base()
 
 class RunnerJson():
 
@@ -28,7 +28,7 @@ class RunnerJson():
         4.组装
         5.输出到jsoncase/xxxx.txt
         '''
-        nums = Base().getCaseElementNum()
+        nums = bs.getCaseElementNum()
         for i in range(nums):
             if floor >= 1:
                 self.runnercore(floor, nums, i, type = 1)
@@ -42,16 +42,16 @@ class RunnerJson():
             # 固定循环方式组成固定用例 与初始化迭代器指针对应
             [create.cycleCase.__next__() for _ in range(i + 1)]
             newjson = create.createjson(floor, -1)
-            WriterJson(str(newjson))()
+            WriterJson(bs.toStr(newjson))()
             while True:  # 初始化迭代器指针
-                if create.cycleCase.__next__() == Base().readYamlcaseElement()[nums - 1]:
+                if create.cycleCase.__next__() == bs.readYamlcaseElement()[nums - 1]:
                     break
 
         if type == 2:
             # 只修改json中一个key的值
-            for k in range(len(ReaderJson().getJsonPath(Base().toJson(Base().jsonDatafile())))):
+            for k in range(len(ReaderJson().getJsonPath(bs.toJson(bs.jsonDatafile())))):
                 newjson = create.createjson(floor, k)
-                WriterJson(str(newjson))()
+                WriterJson(bs.toStr(newjson))()
 
 
 if __name__ == '__main__':

@@ -1,1 +1,20 @@
-{'status': '0000', 'message': 'success', 'data': '1234567SDFGHJ#$%^YUI'}
+{
+    "status": "0000",
+    "message": "^1[0-9]{10}",
+    "data": {
+        "title": {
+            "id": "001",
+            "name": "\u767d\u83dc"
+        },
+        "content": [
+            {
+                "id": "001",
+                "value": "\u4f60\u597d \u767d\u83dc"
+            },
+            {
+                "id": "002",
+                "value": "\u4f60\u597d \u841d\u535c"
+            }
+        ]
+    }
+}

@@ -1,1 +1,5 @@
-{'status': '/t/n/f/r', 'message': 'okey', 'data': []}
+{
+    "status": "&@#\uffe5%\u2026\u2026&*\uff08\uff09",
+    "message": "\\\\/\\/\\/\\/\\//",
+    "data": "/t/n/f/r"
+}

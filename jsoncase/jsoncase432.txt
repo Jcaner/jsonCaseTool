@@ -1,1 +1,8 @@
-{'status': '0000', 'message': 'success', 'data': {'title': False, 'content': True}}
+{
+    "status": "0000",
+    "message": "success",
+    "data": {
+        "title": true,
+        "content": "None"
+    }
+}

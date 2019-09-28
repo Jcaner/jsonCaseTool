@@ -1,1 +1,14 @@
-{'status': '0000', 'message': 'success', 'data': {'title': {'id': '826153155@qq.com', 'name': '^1[0-9]{10}'}, 'content': [[1, 2, 3, 4], {'user': 'haha'}]}}
+{
+    "status": "0000",
+    "message": "success",
+    "data": {
+        "title": {
+            "id": false,
+            "name": true
+        },
+        "content": [
+            "None",
+            18333615432
+        ]
+    }
+}

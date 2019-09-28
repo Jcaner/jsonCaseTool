@@ -1,1 +1,11 @@
-{'status': '0000', 'message': 'success', 'data': {'title': {'id': '001', 'name': '白菜'}, 'content': -1}}
+{
+    "status": "0000",
+    "message": "success",
+    "data": {
+        "title": {
+            "id": "001",
+            "name": "\u767d\u83dc"
+        },
+        "content": 0
+    }
+}

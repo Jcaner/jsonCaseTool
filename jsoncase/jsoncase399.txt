@@ -1,1 +1,5 @@
-{'status': {}, 'message': '', 'data': None}
+{
+    "status": "http://www.baidu.com",
+    "message": false,
+    "data": true
+}

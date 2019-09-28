@@ -1,1 +1,20 @@
-{'status': '0000', 'message': 'success', 'data': {'title': {'id': '001', 'name': '白菜'}, 'content': [{'id': None, 'value': '中文'}, {'id': '~!@#$%^&*(SRDTFYUHIJKUYGTFRTDDXFGB哈哈@#￥%……&*（VUGVBJNM', 'value': 123456}]}}
+{
+    "status": "0000",
+    "message": "success",
+    "data": {
+        "title": {
+            "id": "001",
+            "name": "\u767d\u83dc"
+        },
+        "content": [
+            {
+                "id": 123456,
+                "value": "http://www.baidu.com"
+            },
+            {
+                "id": false,
+                "value": true
+            }
+        ]
+    }
+}

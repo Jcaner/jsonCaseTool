@@ -1,1 +1,20 @@
-{'status': 'http://www.baidu.com', 'message': False, 'data': True}
+{
+    "status": "0000",
+    "message": "success",
+    "data": {
+        "title": {
+            "id": "001",
+            "name": "\u767d\u83dc"
+        },
+        "content": [
+            {
+                "id": "001",
+                "value": "\u4f60\u597d \u767d\u83dc"
+            },
+            {
+                "id": "002",
+                "value": "okey"
+            }
+        ]
+    }
+}

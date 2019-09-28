@@ -52,6 +52,11 @@ class Base():
         else:
             return False
 
+    def toStr(self,jsondata):
+        if isinstance(jsondata,dict):
+            jsondata = json.dumps(jsondata,indent=4)
+        return jsondata
+
     def toJson(self, jsonstr):
         '''
         如果是str，则转换成json

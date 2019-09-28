@@ -1,1 +1,5 @@
-{'status': '0000', 'message': 'success', 'data': {'title': {'id': '001', 'name': '白菜'}, 'content': [{'id': '001', 'value': '中文'}, {'id': '002', 'value': '你好 萝卜'}]}}
+{
+    "status": 0.5,
+    "message": 65535,
+    "data": 15695053810
+}

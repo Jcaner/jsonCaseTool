@@ -1,1 +1,8 @@
-{'status': '0000', 'message': 'success', 'data': {'title': '^1[0-9]{10}', 'content': [1, 2, 3, 4]}}
+{
+    "status": "0000",
+    "message": "success",
+    "data": {
+        "title": 0.5,
+        "content": 65535
+    }
+}

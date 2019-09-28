@@ -1,1 +1,5 @@
-{'status': 'okey', 'message': [], 'data': {}}
+{
+    "status": "/t/n/f/r",
+    "message": "okey",
+    "data": []
+}
