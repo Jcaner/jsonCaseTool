@@ -49,10 +49,27 @@ class RunnerJson():
 
         if type == 2:
             # 只修改json中一个key的值
-            for k in range(len(ReaderJson().getJsonPath(Base().toJson(Base().jsonDatafile())))):
+            '''
+            获取jsonpaths长度
+            '''
+            basedatafile = Base().jsonDatafile()
+            basefile_jsondata = Base().toJson(basedatafile)
+            jsonpaths = ReaderJson().getJsonPath(basefile_jsondata)
+
+            for k in range(len(jsonpaths)):
                 newjson = create.createjson(floor, k)
                 WriterJson(str(newjson))()
 
+    def runnerbasejsoncase(self):
+        '''
+        通过caseGenerateMolds.json文件的配置方式
+        修改其中单个值，为指定的值
+        生成基本用例，提高实用性
+
+        :return:
+        '''
+
+        pass
 
 if __name__ == '__main__':
     print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'), '执行中...')

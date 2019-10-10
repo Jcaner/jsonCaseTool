@@ -70,3 +70,29 @@ class CreateJson():
             '''
             print('---------', newjson, len(v), len(self.jsonpath), i)
             return newjson
+
+    def deletejsonlistValue(self,jsondata,jsonpaths,protectlist):
+        '''
+
+        删除json中指定的list
+        nums 是list集合
+        jsondata 为需要修改的json
+        protectlist受保护的list
+        :return:jsondata
+        '''
+        for delkey in jsonpaths:
+            if delkey in protectlist:
+                continue
+            else:
+                if isinstance(delkey,list):
+                    lens = len(delkey)
+                if lens == 1:
+                    del jsondata[delkey[0]]
+                elif lens == 2:
+                    del jsondata[delkey[0]][delkey[1]]
+                elif lens == 3:
+                    del jsondata[delkey[0]][delkey[1]][delkey[2]]
+                elif lens == 4:
+                    del jsondata[delkey[0]][delkey[1]][delkey[2]][delkey[3]]
+        return jsondata
+

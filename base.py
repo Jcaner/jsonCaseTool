@@ -17,6 +17,7 @@ import yaml
 class Base():
     def __init__(self):
         self.__filename = 'jsondata.txt'
+        self.__casesGenerateMolds = 'casesGenerateMolds.json'
 
     def readYaml(self):
         with open('caseelement.yaml', 'r', encoding = 'utf-8') as yamlcaseelement:
@@ -81,6 +82,18 @@ class Base():
         self.__filename = value
 
 
+    def readCasesGenerateMoldsJson(self):
+        with open(self.__casesGenerateMolds,'r',encoding = 'utf-8') as cases:
+            jsoncasesBases = cases.read()
+        return jsoncasesBases
+
+    @property
+    def casesGenerateMolds(self):
+        return self.__casesGenerateMolds
+
+    @jsonfilename.setter
+    def casesGenerateMolds(self, value):
+        self.__casesGenerateMolds = value
 '''
     @staticmethod
     def getUrlData(url,type,headers,data):
@@ -95,3 +108,7 @@ class Base():
             print(e)
 
 '''
+
+if __name__ == '__main__':
+    b = Base()
+    print(b.readCasesGenerateMoldsJson())

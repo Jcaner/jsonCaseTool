@@ -82,3 +82,4 @@ class ReaderJson(object):
                 paths.append([i])
                 paths += [[i] + x for x in self.getJsonPath(v)]
         return paths
+
