@@ -1,1 +1,12 @@
-{'status': True, 'message': 'None', 'data': 18333615432}
+{
+    "status": "^1[0-9]{10}",
+    "message": [
+        1,
+        2,
+        3,
+        4
+    ],
+    "data": {
+        "user": "haha"
+    }
+}

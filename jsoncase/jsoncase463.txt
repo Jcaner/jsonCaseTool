@@ -1,1 +1,21 @@
-{'status': '0000', 'message': 'success', 'data': {'title': {'id': 123456, 'name': 'http://www.baidu.com'}, 'content': [False, True]}}
+{
+    "status": "0000",
+    "message": "success",
+    "data": {
+        "title": {
+            "id": "826153155@qq.com",
+            "name": "^1[0-9]{10}"
+        },
+        "content": [
+            [
+                1,
+                2,
+                3,
+                4
+            ],
+            {
+                "user": "haha"
+            }
+        ]
+    }
+}

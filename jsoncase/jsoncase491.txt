@@ -1,1 +1,20 @@
-{'status': '0000', 'message': 'success', 'data': {'title': {'id': '001', 'name': '白菜'}, 'content': [{'id': '1234567SDFGHJ#$%^YUI', 'value': '826153155@qq.com'}, {'id': '^1[0-9]{10}', 'value': [1, 2, 3, 4]}]}}
+{
+    "status": "0000",
+    "message": "success",
+    "data": {
+        "title": {
+            "id": "001",
+            "name": "\u767d\u83dc"
+        },
+        "content": [
+            {
+                "id": 18333615432,
+                "value": "1234567SDFGHJ#$%^YUI"
+            },
+            {
+                "id": "826153155@qq.com",
+                "value": "^1[0-9]{10}"
+            }
+        ]
+    }
+}

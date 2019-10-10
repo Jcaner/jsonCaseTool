@@ -1,1 +1,8 @@
-{'status': '0000', 'message': 'success', 'data': {'title': '\\\\/\\/\\/\\/\\//', 'content': '/t/n/f/r'}}
+{
+    "status": "0000",
+    "message": "success",
+    "data": {
+        "title": [],
+        "content": {}
+    }
+}

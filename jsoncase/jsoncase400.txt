@@ -1,1 +1,5 @@
-{'status': '1234567SDFGHJ#$%^YUI', 'message': '826153155@qq.com', 'data': '^1[0-9]{10}'}
+{
+    "status": "http://www.baidu.com",
+    "message": false,
+    "data": true
+}

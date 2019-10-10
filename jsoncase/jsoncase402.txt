@@ -1,1 +1,5 @@
-{'status': 'http://www.baidu.com', 'message': False, 'data': True}
+{
+    "status": "None",
+    "message": 18333615432,
+    "data": "1234567SDFGHJ#$%^YUI"
+}

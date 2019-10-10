@@ -1,1 +1,7 @@
-{'status': '&@#￥%……&*（）', 'message': '\\\\/\\/\\/\\/\\//', 'data': '/t/n/f/r'}
+{
+    "status": {
+        "user": "haha"
+    },
+    "message": "End",
+    "data": 0
+}

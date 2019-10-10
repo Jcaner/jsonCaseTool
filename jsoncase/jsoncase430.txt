@@ -1,1 +1,8 @@
-{'status': '0000', 'message': 'success', 'data': {'title': True, 'content': 'None'}}
+{
+    "status": "0000",
+    "message": "success",
+    "data": {
+        "title": "826153155@qq.com",
+        "content": "^1[0-9]{10}"
+    }
+}

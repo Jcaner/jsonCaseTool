@@ -1,1 +1,17 @@
-{'status': '0000', 'message': 'success', 'data': {'title': {'id': '001', 'name': '白菜'}, 'content': 18333615432}}
+{
+    "status": "0000",
+    "message": "success",
+    "data": {
+        "title": {
+            "id": "001",
+            "name": "\u767d\u83dc"
+        },
+        "content": [
+            123456,
+            {
+                "id": "002",
+                "value": "\u4f60\u597d \u841d\u535c"
+            }
+        ]
+    }
+}

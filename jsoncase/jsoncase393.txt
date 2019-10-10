@@ -1,1 +1,5 @@
-{'status': 65535, 'message': 15695053810, 'data': '6@#$%^&*(efkfjfghk6541'}
+{
+    "status": 123456,
+    "message": "http://www.baidu.com",
+    "data": false
+}
